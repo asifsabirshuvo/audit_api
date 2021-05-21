@@ -3,7 +3,7 @@ const Audit = require("../models/audit");
 const uniqid = require('uniqid');
 
 async function createAudit(body){
-
+    console.log(body);
     body.code  = uniqid();
     body.createdAt = momentTz().tz("Asia/Dhaka").format('YYYY-MM-DD HH:mm:ss');
     body.updatedAt = momentTz().tz("Asia/Dhaka").format('YYYY-MM-DD HH:mm:ss');
@@ -27,7 +27,7 @@ async function createAudit(body){
 
 async function updateAudit(updateBody){
 
-    console.log(updateAudit)
+    console.log(updateBody)
 
     updateBody.updatedAt = momentTz().tz("Asia/Dhaka").format('YYYY-MM-DD HH:mm:ss');
 

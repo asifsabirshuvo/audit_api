@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");//mongodb said to use it for stopping findandupdate warnings IDK
-
+require("dotenv").config();
 mongoose.set("useFindAndModify", false);
 mongoose.connect(
-  "mongodb://localhost/auditCollection",
+  process.env.DB_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) console.error(err);
