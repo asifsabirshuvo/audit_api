@@ -5,6 +5,7 @@ const auditService = require('./../service/auditService');
 const { check, validationResult } = require("express-validator"); //to validate form
 
 router.post("/",[check("user").not().isEmpty(),
+		check("name").not().isEmpty(),
 		check("address").not().isEmpty(),
 		check("description").not().isEmpty(),
 		check("latitude").isNumeric().not().isEmpty(),

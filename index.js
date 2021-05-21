@@ -24,8 +24,8 @@ app.use((req, res) => {
     res.status(404).send('404 route not found!')
 })
 
-app.listen(3000,()=>{
-    console.log('server running on 3000 PORT');
+app.listen(4000,()=>{
+    console.log('server running on 4000 PORT');
 })
 
 

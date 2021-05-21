@@ -59,7 +59,7 @@ async function getAudits(page,limit){
     try{
         const data = await Audit.find({}, { _id: 0,__v:0 }, query);
         return {
-            status: 201,
+            status: 200,
             success: true,
             message: data,
         };
