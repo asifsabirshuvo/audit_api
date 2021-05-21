@@ -4,8 +4,7 @@ const mongoose = require("mongoose");
 const auditService = require('./../service/auditService');
 const { check, validationResult } = require("express-validator"); //to validate form
 
-router.post("/",[check("user").not().isEmpty(),
-		check("name").not().isEmpty(),
+router.post("/",[check("name").not().isEmpty(),
 		check("address").not().isEmpty(),
 		check("description").not().isEmpty(),
 		check("latitude").isNumeric().not().isEmpty(),
@@ -34,7 +33,7 @@ router.post("/",[check("user").not().isEmpty(),
 	}
 );
 
-router.patch("/",[check("user").not().isEmpty(),check("code").not().isEmpty()],
+router.patch("/",[check("updatedBy").not().isEmpty(),check("code").not().isEmpty()],
 	async (req, res) => {
 		const errors = validationResult(req);		
 

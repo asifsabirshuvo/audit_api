@@ -10,10 +10,6 @@ const auditSchema = new Schema({
     type: String,
     required: true
   },
-  user: {
-    type: String,
-    required: true
-  },
   name: {
     type: String,
     required: true
