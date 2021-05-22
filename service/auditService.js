@@ -72,6 +72,59 @@ async function getAudits(page,limit){
     }
 }
 
+async function getSingleAudit(code){
+  
+    try{
+        const data = await Audit.findOne({code:code}, { _id: 0,__v:0 });
+        if(data==null){
+            return {
+                status: 400,
+                success: false,
+                message: 'Not found',
+            };
+    
+        }
+        return {
+            status: 200,
+            success: true,
+            message: data,
+        };
+    }catch(err){
+        return {
+            status: 400,
+            success: false,
+            message: 'failed to find from the database',
+        };       
+    }
+}
 
-module.exports = {createAudit, getAudits, updateAudit};
+
+async function deleteSingleAudit(code){
+  
+    try{
+        const data = await Audit.deleteOne({code:code});
+        if(data.n==0){
+            return {
+                status: 400,
+                success: false,
+                message: 'Unable to delete. Code not found.',
+            };
+    
+        }
+        return {
+            status: 200,
+            success: true,
+            message: 'Successfully deleted.',
+        };
+    }catch(err){
+        return {
+            status: 400,
+            success: false,
+            message: 'failed to find from the database',
+        };       
+    }
+}
+
+
+module.exports = {createAudit, getAudits, updateAudit,getSingleAudit, deleteSingleAudit};
 

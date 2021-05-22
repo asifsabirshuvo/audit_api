@@ -9,8 +9,6 @@ router.post("/",[check("name").not().isEmpty(),
 		check("description").not().isEmpty(),
 		check("latitude").isNumeric().not().isEmpty(),
 		check("longitude").isNumeric().not().isEmpty(),
-		check("createdAt").not().isEmpty(),
-		check("updatedAt").not().isEmpty(),
 		check("createdBy").not().isEmpty(),
 		check("updatedBy").not().isEmpty(),
 	],
@@ -83,9 +81,29 @@ router.get("/", async (req, res) => {
 			message: data.message
 		});
 
+  });
+
+  router.get("/:code", async (req, res) => {
+
+
+		const data = await auditService.getSingleAudit(req.params.code);
+		return res.status(data.status).json({
+			success: data.success,
+			message: data.message
+		});
 
   });
 
+  router.delete("/:code", async (req, res) => {
+
+	
+	const data = await auditService.deleteSingleAudit(req.params.code);
+	return res.status(data.status).json({
+		success: data.success,
+		message: data.message
+	});
+
+});
 
   
 
