@@ -35,24 +35,12 @@ router.patch("/",[check("updatedBy").not().isEmpty(),check("code").not().isEmpty
 	async (req, res) => {
 		const errors = validationResult(req);		
 
-		let validBody = 'valid';
-		for (const key of Object.keys(req.body)) {
-			if(req.body[key].trim()==undefined || !req.body[key].trim().length>0){
-				validBody = `${key} is invalid.`;
-			}
-		}
-
 		if (!errors.isEmpty()) {
 			return res.status(400).json({
 				success: false,
 				message: errors.array(),
 			});
-		}  else if(validBody!='valid'){
-			return res.status(400).json({
-				success: false,
-				message: validBody,
-			});
-		}
+		}  
 			else{
 			const data = await auditService.updateAudit(req.body);
 			return res.status(data.status).json({
