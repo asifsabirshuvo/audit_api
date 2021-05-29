@@ -1,6 +1,6 @@
 # audit_api
 
-This is the backend project.
+This is the backend project. (For interview purpose)
 
 System design is as follows:
 
