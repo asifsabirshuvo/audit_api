@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "d56522a6-d61f-44b5-ae3b-b4f59573aa54",
+		"name": "task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "sellerName",
+							"value": "asif caters",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/audit?page=1&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"audit"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Dhandmondo",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Dhaka",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Dhandmondo is the best road u see. Dhandmondo is the best road u see. Dhandmondo is the best road u see. Dhandmondo is the best road u see. Dhandmondo is the best road u see. Dhandmondo is the best road u see. ",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "1.8423",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "2.32435",
+							"type": "text"
+						},
+						{
+							"key": "createdBy",
+							"value": "michelle",
+							"type": "text"
+						},
+						{
+							"key": "updatedBy",
+							"value": "michelle",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"description": "\n",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.asifsabir.me/api/v1/audit",
+					"protocol": "https",
+					"host": [
+						"api",
+						"asifsabir",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"audit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "13s8yb9skozuho01",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "johnson street",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "MIA",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Joss desc",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "32.32",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "updatedAt",
+							"value": "14May2021",
+							"type": "text"
+						},
+						{
+							"key": "updatedBy",
+							"value": "jack",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"description": "\n",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/v1/audit",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"audit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/v1/audit/13s8yuf6koyols0v",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/audit/13s8yuf6koyols0vx",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"audit",
+						"13s8yuf6koyols0vx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/v1/audit/13s8yuf6koyols0vx",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/audit/13s8yuf6koyoflqu",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"audit",
+						"13s8yuf6koyoflqu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
